@@ -18,7 +18,6 @@ public class PetArduinoHandler : MonoBehaviour
 
     void Start()
     {
-        _serial.Open();
         _serial.DataReceived += SaveCurrentState;
     }
 
@@ -45,7 +44,7 @@ public class PetArduinoHandler : MonoBehaviour
             print(openPort);
             if (openPort != "COM1") { port = openPort; break; }
         }
-        _serial = new SerialPort("\\\\.\\" + port, 9600);
+        _serial = new SerialPort(port, 9600);
         if (!_serial.IsOpen)
         {
             print("Opening " + port + ", baud 9600");
