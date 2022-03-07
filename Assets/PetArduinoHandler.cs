@@ -5,34 +5,15 @@ using UnityEngine;
 
 public class PetArduinoHandler : MonoBehaviour
 {
-    private SerialPort _serial;
-    private PhysicalPetState _state;
-    private bool _waitingForState;
+    private SerialController _serial;
 
-    public PhysicalPetState State => _state;
-    
+    public PhysicalPetState State { get; private set; }
+
     void Awake()
     {
+        _serial = GetComponent<SerialController>();
         InitSerialPort();
-    }
-
-    void Start()
-    {
-        _serial.DataReceived += SaveCurrentState;
-    }
-
-    private void SaveCurrentState(object sender, SerialDataReceivedEventArgs e)
-    {
-        _state = JsonUtility.FromJson<PhysicalPetState>(e.ToString());
-    }
-
-    void FixedUpdate()
-    {
-        if(!_serial.IsOpen)
-            _serial.Open();
-
-        if (!_waitingForState)
-            _serial.Write("0"); //we dont ask for multiple things, just asking for any
+        _serial.enabled = true;
     }
 
     private void InitSerialPort()
@@ -44,15 +25,20 @@ public class PetArduinoHandler : MonoBehaviour
             print(openPort);
             if (openPort != "COM1") { port = openPort; break; }
         }
-        _serial = new SerialPort(port, 9600);
-        if (!_serial.IsOpen)
-        {
-            print("Opening " + port + ", baud 9600");
-            _serial.Open();
-            _serial.ReadTimeout = 100;
-            _serial.Handshake = Handshake.None;
-            if (_serial.IsOpen) { print("Open"); }
-        }
+
+        _serial.portName = port;
+        _serial.messageListener = gameObject;
+    }
+
+    private void OnMessageArrived(string msg)
+    {
+        State = JsonUtility.FromJson<PhysicalPetState>(msg);
+        //print(State.ToJson());
+    }
+
+    private void OnConnectionEvent(bool success)
+    {
+        print("Connection: " + (success ? "success" : "failure"));
     }
 }
 
@@ -62,4 +48,9 @@ public struct PhysicalPetState
     public float flexAngleLeft;
     public float flexAngleRight;
     public bool motionDetected;
+
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(this);
+    }
 }
