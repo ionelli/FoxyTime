@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using static OVRHand;
 
 public class HandInteraction : MonoBehaviour
@@ -12,6 +13,8 @@ public class HandInteraction : MonoBehaviour
 
     private Rigidbody _heldItem;
     private OVRHand _hand;
+
+    private OVRGrabber _grabber;
 
     private bool HasItem => _heldItem != null;
 
@@ -64,4 +67,38 @@ public class HandInteraction : MonoBehaviour
 
         return !(_hand.GetFingerPinchStrength(HandFinger.Index) < minPinchStrength);
     }
+
+    public Transform GetAttachTransform(IXRInteractable interactable)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void GetValidTargets(List<IXRInteractable> targets)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnRegistered(InteractorRegisteredEventArgs args)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnUnregistered(InteractorUnregisteredEventArgs args)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void PreprocessInteractor(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ProcessInteractor(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+    {
+        throw new NotImplementedException();
+    }
+
+    public InteractionLayerMask interactionLayers { get; }
+    public event Action<InteractorRegisteredEventArgs> registered;
+    public event Action<InteractorUnregisteredEventArgs> unregistered;
 }
