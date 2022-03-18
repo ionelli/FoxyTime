@@ -785,6 +785,8 @@ GameObject:
   - component: {fileID: 1846200229}
   - component: {fileID: 730095082362646496}
   - component: {fileID: 6489499801431463504}
+  - component: {fileID: 4745038865672708791}
+  - component: {fileID: 1545675985829946432}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Untagged
@@ -987,6 +989,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4745038865672708791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020983980232809014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab5b77b51ccedc23aa703ccbe22b445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1545675985829946432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020983980232809014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: COM3
+  baudRate: 9600
+  messageListener: {fileID: 0}
+  reconnectionDelay: 1000
+  maxUnreadMessages: 1
 --- !u!1 &4246927435662846628
 GameObject:
   m_ObjectHideFlags: 0
