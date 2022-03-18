@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO.Ports;
 using UnityEngine;
 
 public class PetArduinoHandler : MonoBehaviour
 {
+    [SerializeField] private bool spoofData;
     private SerialController _serial;
 
     public PhysicalPetState State { get; private set; }
@@ -14,6 +13,24 @@ public class PetArduinoHandler : MonoBehaviour
         _serial = GetComponent<SerialController>();
         InitSerialPort();
         _serial.enabled = true;
+        enabled = spoofData;
+    }
+
+    private float _spoofTimer;
+    private void Update()
+    {
+        if (_spoofTimer < 1f)
+        {
+            _spoofTimer += Time.deltaTime;
+            return;
+        }
+        
+        State = new PhysicalPetState()
+        {
+            distance = Random.Range(PhysicalPetState.minDistance, PhysicalPetState.maxDistance)
+        };
+
+        _spoofTimer = 0;
     }
 
     private void InitSerialPort()
@@ -44,10 +61,14 @@ public class PetArduinoHandler : MonoBehaviour
 
 public struct PhysicalPetState
 {
+    public const float minDistance = 2f;
+    public const float maxDistance = 3000f;
+
     public float distance;
     public float flexAngleLeft;
     public float flexAngleRight;
     public bool motionDetected;
+    public float normalizedDistance => Mathf.InverseLerp(minDistance, maxDistance, distance);
 
     public string ToJson()
     {

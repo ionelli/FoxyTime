@@ -14,18 +14,18 @@ public class PetController : MonoBehaviour
     [SerializeField] private float idleTime = 15f;
     
     private NavMeshAgent _agent;
-    private PetState _currentState;
+    private VirtualPetState _virtualState;
     private float _idleTimer;
     private PetEffects _effects;
     
-    private PetState CurrentState
+    private VirtualPetState CurrentState
     {
-        get => _currentState;
+        get => _virtualState;
         set
         {
-            if(_currentState == value)
+            if(_virtualState == value)
                 return;
-            _currentState = value;
+            _virtualState = value;
             _petStateChanged = true;
         }
     }
@@ -36,20 +36,20 @@ public class PetController : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _effects = GetComponent<PetEffects>();
-        CurrentState = PetState.Wander;
+        CurrentState = VirtualPetState.Wander;
     }
 
     void Update()
     {
         switch (CurrentState)
         {
-            case PetState.Wander:
+            case VirtualPetState.Wander:
                 Wander();
                 break;
-            case PetState.Return:
+            case VirtualPetState.Return:
                 ReturnToPlatform();
                 break;
-            case PetState.Idle:
+            case VirtualPetState.Idle:
                 Idle();
                 break;
             default:
@@ -71,7 +71,7 @@ public class PetController : MonoBehaviour
         
         //temp
         transform.SetPositionAndRotation(platformTransformTarget.position, platformTransformTarget.rotation);
-        CurrentState = PetState.Idle;
+        CurrentState = VirtualPetState.Idle;
     }
 
     private void Idle()
@@ -81,7 +81,7 @@ public class PetController : MonoBehaviour
 
         _idleTimer += Time.deltaTime;
         if (_idleTimer >= idleTime)
-            CurrentState = PetState.Wander;
+            CurrentState = VirtualPetState.Wander;
     }
 
     private void Wander()
@@ -94,17 +94,19 @@ public class PetController : MonoBehaviour
     }
 
     [ContextMenu("Set Wander")]
-    public void EditorSetWander() => CurrentState = PetState.Wander;
+    public void EditorSetWander() => CurrentState = VirtualPetState.Wander;
     [ContextMenu("Set Idle")]
-    public void EditorSetIdle() => CurrentState = PetState.Idle;
+    public void EditorSetIdle() => CurrentState = VirtualPetState.Idle;
     [ContextMenu("Set Return")]
-    public void EditorSetReturn() => CurrentState = PetState.Return;
+    public void EditorSetReturn() => CurrentState = VirtualPetState.Return;
 
     private Coroutine _candyInterestRoutine;
+    
+    [ContextMenu("Start Candy Interest")]
     public void StartCandyInterest()
     {
-        if (CurrentState == PetState.Wander)
-            CurrentState = PetState.Return;
+        if (CurrentState == VirtualPetState.Wander)
+            CurrentState = VirtualPetState.Return;
 
         if(_candyInterestRoutine != null)
             StopCoroutine(_candyInterestRoutine);
@@ -116,6 +118,7 @@ public class PetController : MonoBehaviour
         //Show smileys based on distance
     }
 
+    [ContextMenu("Stop Candy Interest")]
     public void StopCandyInterest()
     {
         _effects.StopSmileys();
@@ -127,23 +130,22 @@ public class PetController : MonoBehaviour
     {
         _effects.PlayStars();
         while (_effects.StarsActive)
-        {
             yield return null;
-        }
+        
         _effects.PlaySmileys();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out ObjectReturn objectReturn))
-        {
-            objectReturn.ReturnToStart();
-            StopCandyInterest();
-        }
+        if (!other.TryGetComponent(out ObjectReturn objectReturn)) 
+            return;
+        
+        objectReturn.ReturnToStart();
+        StopCandyInterest();
     }
 }
 
-public enum PetState
+public enum VirtualPetState
 {
     Wander,
     Return,
