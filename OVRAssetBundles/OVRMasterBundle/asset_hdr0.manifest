@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1278656251
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4d7b5aa050c90fcbb1b61b1c79cb4a97
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2c040cef7601b3c05f2f6ecddfcec8c0
+HashAppended: 0
+ClassTypes:
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SkySeries Freebie/FreebieHdri/DayInTheClouds4k.hdr
+Dependencies: []

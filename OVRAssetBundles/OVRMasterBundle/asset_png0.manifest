@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 3454430016
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6bd68a5c3c4397377c136f50796178af
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/World/Tree9/Tree9_1_Textures/normal_specular.png
+- Assets/World/Tree9/bark14_N.png
+- Assets/Fox/Textures/T_Fox_BC.png
+- Assets/Oculus/VR/Textures/HandTracking/HandTracking_uvmap_2048.png
+- Assets/World/Tree9/Tree9_1_Textures/diffuse.png
+- Assets/World/Grass And Flowers Pack 1/Grass/Grass 2.png
+- Assets/NavMeshComponents/Gizmos/NavMeshSurface Icon.png
+- Assets/World/Grass And Flowers Pack 1/Grass/Grass 3.png
+- Assets/Fox/Textures/T_Fox_Normal.png
+- Assets/Effects/star.png
+- Assets/World/Tree9/Tree9_1_Textures/shadow.png
+- Assets/World/Tree9/Leafs19_N.png
+- Assets/Fox/Textures/T_Fox_AO.png
+- Assets/World/Tree9/Tree9_1_Textures/translucency_gloss.png
+- Packages/com.unity.postprocessing/PostProcessing/Gizmos/PostProcessLayer.png
+- Assets/World/Tree9/bark14.png
+- Assets/Samples/Visual Effect Graph/10.8.1/VisualEffectGraph Additions/Textures/Fire/SmallFlame01-mini_15x4.png
+- Assets/World/Grass And Flowers Pack 1/Flower/Flower 6.png
+- Assets/Effects/heart.png
+Dependencies: []

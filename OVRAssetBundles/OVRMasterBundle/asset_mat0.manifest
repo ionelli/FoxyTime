@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 2143393692
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3bd82e13747e731b70fa59f6be7e61de
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 41f5e68da31a4f6b36e45572326352d3
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/VR/Materials/BasicHandMaterial.mat
+- Assets/Effects/star.mat
+- Assets/Effects/heart_mat.mat
+- Assets/Fox/Materials/M_Fox.mat
+- Assets/Assets/StreetBench/Materials/streetbench2.mat
+- Assets/Assets/StreetBench/Materials/streetbanch1.mat
+- Assets/Assets/Bowl/Materials/Bowl_mat.mat
+- Assets/World/Tree9/Tree9_leafs.mat
+- Assets/World/Grass And Flowers Pack 1/Flower/Materials/Flower 6.mat
+- Assets/Assets/StreetBench/Materials/streetbench2-Material__AO_tga_001.mat
+- Assets/World/Tree9/bark14.mat
+- Assets/SkySeries Freebie/DayInTheClouds.mat
+- Assets/Assets/StreetBench/Materials/streetbanch1-Material__AO.tga.001.mat
+- Assets/World/Tree9/Materials/leaf.mat
+- Assets/Oculus/SampleFramework/Core/CustomHands/Materials/Hands_solid.mat
+Dependencies:
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_hdr0
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_png0
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_tga0
