@@ -50,7 +50,7 @@ public class ObjectReturn : MonoBehaviour
         _returnWait = returnWaitTime;
     }
 
-    private void ReturnToStart()
+    public void ReturnToStart()
     {
         transform.position = _startPos;
         _hasMoved = false;

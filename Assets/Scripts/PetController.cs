@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +16,7 @@ public class PetController : MonoBehaviour
     private NavMeshAgent _agent;
     private PetState _currentState;
     private float _idleTimer;
+    private PetEffects _effects;
     
     private PetState CurrentState
     {
@@ -32,6 +35,7 @@ public class PetController : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _effects = GetComponent<PetEffects>();
         CurrentState = PetState.Wander;
     }
 
@@ -95,6 +99,48 @@ public class PetController : MonoBehaviour
     public void EditorSetIdle() => CurrentState = PetState.Idle;
     [ContextMenu("Set Return")]
     public void EditorSetReturn() => CurrentState = PetState.Return;
+
+    private Coroutine _candyInterestRoutine;
+    public void StartCandyInterest()
+    {
+        if (CurrentState == PetState.Wander)
+            CurrentState = PetState.Return;
+
+        if(_candyInterestRoutine != null)
+            StopCoroutine(_candyInterestRoutine);
+        
+        _candyInterestRoutine = StartCoroutine(C_CandyInterest());
+
+        //Show stars
+        //wait a moment
+        //Show smileys based on distance
+    }
+
+    public void StopCandyInterest()
+    {
+        _effects.StopSmileys();
+        if(_candyInterestRoutine != null)
+            StopCoroutine(C_CandyInterest());
+    }
+
+    private IEnumerator C_CandyInterest()
+    {
+        _effects.PlayStars();
+        while (_effects.StarsActive)
+        {
+            yield return null;
+        }
+        _effects.PlaySmileys();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out ObjectReturn objectReturn))
+        {
+            objectReturn.ReturnToStart();
+            StopCandyInterest();
+        }
+    }
 }
 
 public enum PetState
