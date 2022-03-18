@@ -1,0 +1,69 @@
+ManifestFileVersion: 0
+CRC: 3138964715
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7d08cc19575684f30ce0daf235051cc5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a4f4f141ed02cdabcf317ebcad6a3da
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/World/surface.fbx
+- Assets/Assets/ramp.fbx
+- Assets/Fox/FBXs/Fox.fbx
+- Assets/Fox/Animations/Fox_Walk_Back_InPlace.fbx
+- Assets/Assets/StreetBench/streetbanch1.fbx
+- Assets/Fox/Animations/Fox_Run_InPlace.fbx
+- Assets/Fox/Animations/Fox_Walk_Right.fbx
+- Assets/Fox/Animations/Fox_Walk.fbx
+- Assets/Fox/Animations/Fox_Run_Left.fbx
+- Assets/Assets/Candy/candy.fbx
+- Assets/Fox/Animations/Fox_Run_Right_InPlace.fbx
+- Assets/Fox/Animations/Fox_Run.fbx
+- Assets/Fox/Animations/Fox_Walk_Back.fbx
+- Assets/Fox/Animations/Fox_Walk_InPlace.fbx
+- Assets/World/Tree9/Tree9_Leaf.fbx
+- Assets/Fox/Animations/Fox_Walk_Left.fbx
+- Assets/Fox/Animations/Fox_Sit2_Idle.fbx
+- Assets/World/hill.fbx
+- Assets/Fox/Animations/Fox_Run_Right.fbx
+- Assets/Fox/Animations/Fox_Walk_Left_InPlace.fbx
+- Assets/Fox/Animations/Fox_Run_Left_InPlace.fbx
+- Assets/Assets/StreetBench/streetbench2.fbx
+- Assets/Fox/Animations/Fox_Walk_Right_InPlace.fbx
+- Assets/Assets/Bowl/Models/Bowl.FBX
+Dependencies:
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_jpg0
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_tga0

@@ -191,6 +191,12 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8479441578377283618, guid: 2a4a7c2e99b5cb344a1465c7a35c7674, type: 2}
+  - {fileID: 11400000, guid: 3e6afb860ca0f5c438d40e504a5afad3, type: 2}
+  - {fileID: -6200798867394415558, guid: c82e2f900af437b4ca5a7ab1bab2be34, type: 2}
+  - {fileID: 11400000, guid: 608cbeb61f560c249826315b90884e4b, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -209,12 +215,12 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Kennysfirma.Foxytime
-    Standalone: com.DefaultCompany.Lab2VR
+    Standalone: com.Kennysfirma.Foxytime
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
@@ -757,7 +763,8 @@ PlayerSettings:
   scriptingBackend:
     Android: 1
   il2cppCompilerConfiguration: {}
-  managedStrippingLevel: {}
+  managedStrippingLevel:
+    Android: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
   allowUnsafeCode: 0

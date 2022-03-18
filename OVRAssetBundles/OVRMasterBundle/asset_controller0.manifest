@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1431114373
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0be34ea8fc7d728872c7eac6d7b3a38c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Animation/Controllers/Fox_Navigator.controller
+Dependencies:
+- E:/Development/Unity/FoxyTime/OVRAssetBundles/OVRMasterBundle/asset_fbx0
