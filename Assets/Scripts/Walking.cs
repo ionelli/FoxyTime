@@ -17,7 +17,6 @@ public class Walking : MonoBehaviour
     private void Foxwalking()
     {
         animationSoundPlayer.Play();
-        
     }
     private void FoxNotwalking(){
         animationSoundPlayer.Stop();
