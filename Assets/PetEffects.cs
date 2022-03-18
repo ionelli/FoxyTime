@@ -10,6 +10,7 @@ public class PetEffects : MonoBehaviour
     [SerializeField] private float minSmileyEmission = 0.75f;
     [SerializeField] private float maxSmileyEmission = 3f;
     [SerializeField] private ParticleSystem hearts;
+    [SerializeField] private float minFlexAngle = 10f;
 
     public bool StarsActive => stars.isPlaying;
 
@@ -23,7 +24,20 @@ public class PetEffects : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool prevMotion = _physicalState.motionDetected;
+        float prevAngleLeft = _physicalState.flexAngleLeft;
+        float prevAngleRight = _physicalState.flexAngleRight;
         _physicalState = _arduino.State;
+        
+        if(hearts.isPlaying)
+            return;
+        
+        if (!prevMotion && _physicalState.motionDetected ||
+            _physicalState.flexAngleLeft - prevAngleLeft > minFlexAngle ||
+            _physicalState.flexAngleRight - prevAngleRight > minFlexAngle) 
+        {
+            PlayHearts();
+        }
     }
 
     public void PlayStars()

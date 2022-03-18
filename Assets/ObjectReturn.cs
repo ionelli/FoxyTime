@@ -52,6 +52,9 @@ public class ObjectReturn : MonoBehaviour
 
     public void ReturnToStart()
     {
+        if(_grabbable.isGrabbed)
+            _grabbable.GrabEnd(Vector3.zero, Vector3.zero);
+        
         transform.position = _startPos;
         _hasMoved = false;
         _body.velocity = Vector3.zero;
