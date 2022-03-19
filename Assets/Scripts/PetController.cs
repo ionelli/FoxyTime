@@ -93,7 +93,6 @@ public class PetController : MonoBehaviour
             
 
         _idleTimer += Time.deltaTime;
-        print(_idleTimer);
         if (_idleTimer >= idleTime)
             CurrentState = VirtualPetState.Wander;
     }
