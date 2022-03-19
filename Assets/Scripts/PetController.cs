@@ -18,6 +18,7 @@ public class PetController : MonoBehaviour
     private VirtualPetState _virtualState;
     private float _idleTimer;
     private PetEffects _effects;
+    private PetArduinoHandler _arduino;
     
     private VirtualPetState CurrentState
     {
@@ -64,6 +65,7 @@ public class PetController : MonoBehaviour
         {
             _agent.speed = returnSpeed;
             _agent.SetDestination(platformTransformTarget.position);
+            _petStateChanged = false;
         }
             
         
@@ -75,21 +77,38 @@ public class PetController : MonoBehaviour
         CurrentState = VirtualPetState.Idle;
     }
 
+    private bool overrideBoredom;
     private void Idle()
     {
         if (_petStateChanged)
+        {
             _idleTimer = 0;
+            _petStateChanged = false;
+        }
+
+        if (overrideBoredom)
+        {
+            _idleTimer = 0;
+        }
+            
 
         _idleTimer += Time.deltaTime;
+        print(_idleTimer);
         if (_idleTimer >= idleTime)
             CurrentState = VirtualPetState.Wander;
     }
 
     private void Wander()
     {
-        if (_petStateChanged || _agent.remainingDistance < destinationBuffer)
+        if (_petStateChanged)
         {
             _agent.speed = wanderSpeed;
+            _agent.SetDestination(wanderArea.GetRandomPosition());
+            _petStateChanged = false;
+        }
+        
+        if(_agent.remainingDistance < destinationBuffer)
+        {
             _agent.SetDestination(wanderArea.GetRandomPosition());
         }
     }
@@ -106,6 +125,7 @@ public class PetController : MonoBehaviour
     [ContextMenu("Start Candy Interest")]
     public void StartCandyInterest()
     {
+        overrideBoredom = true;
         if (CurrentState == VirtualPetState.Wander)
             CurrentState = VirtualPetState.Return;
 
@@ -118,6 +138,7 @@ public class PetController : MonoBehaviour
     [ContextMenu("Stop Candy Interest")]
     public void StopCandyInterest()
     {
+        overrideBoredom = false;
         _effects.StopSmileys();
         if(_candyInterestRoutine != null)
             StopCoroutine(C_CandyInterest());
