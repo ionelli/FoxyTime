@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1220604633}
-  m_IndirectSpecularColor: {r: 0.35969764, g: 0.44832456, b: 0.5725523, a: 1}
+  m_IndirectSpecularColor: {r: 0.35788408, g: 0.45148957, b: 0.5714699, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1262,7 +1262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29022590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.618, y: 0.214, z: 1.204}
+  m_LocalPosition: {x: 0.01700005, y: 0.214, z: 0.45600003}
   m_LocalScale: {x: 0.0738834, y: 0.038886, z: 0.038886}
   m_Children: []
   m_Father: {fileID: 0}
@@ -31238,7 +31238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685446911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.628, y: 0.07, z: 1.198}
+  m_LocalPosition: {x: 0.007, y: 0.07, z: 0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47551,7 +47551,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1056494375 stripped
 Transform:
@@ -68692,15 +68692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalScale.x
-      value: 142.13496
+      value: 151.84279
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 10.683001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalScale.z
-      value: 124.21008
+      value: 132.69363
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68708,7 +68708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0.743
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db5bb006289806d41967d5b0ca4a6d99, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79828,7 +79828,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: efb0fc09a2abeffd7834c23d081c3826, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0f9329972835035458afa7c49230133c, type: 2}
 --- !u!64 &1921935631
 MeshCollider:
   m_ObjectHideFlags: 0
