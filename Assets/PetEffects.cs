@@ -36,7 +36,7 @@ public class PetEffects : MonoBehaviour
             _physicalState.flexAngleLeft - prevAngleLeft > minFlexAngle ||
             _physicalState.flexAngleRight - prevAngleRight > minFlexAngle) 
         {
-            PlayHearts();
+            StartSystem(hearts);
         }
     }
 
@@ -63,21 +63,6 @@ public class PetEffects : MonoBehaviour
             e.rateOverTimeMultiplier = emission;
             yield return null;
         }
-    }
-
-    public void PlayHearts()
-    {
-        StartSystem(hearts);
-    }
-
-    public void StopStars()
-    {
-        
-    }
-
-    public void StopHearts()
-    {
-        
     }
 
     public void StopSmileys()

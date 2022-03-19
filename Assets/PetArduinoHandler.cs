@@ -1,5 +1,7 @@
+using System;
 using System.IO.Ports;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PetArduinoHandler : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class PetArduinoHandler : MonoBehaviour
     {
         _serial = GetComponent<SerialController>();
         InitSerialPort();
-        _serial.enabled = true;
+        if(_serial.portName != String.Empty)
+            _serial.enabled = true;
         enabled = spoofData;
     }
 

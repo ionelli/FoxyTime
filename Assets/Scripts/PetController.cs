@@ -12,6 +12,7 @@ public class PetController : MonoBehaviour
     [SerializeField] private float destinationBuffer;
     [SerializeField] private Transform platformTransformTarget;
     [SerializeField] private float idleTime = 15f;
+    [SerializeField] private AudioSource munchAudio;
     
     private NavMeshAgent _agent;
     private VirtualPetState _virtualState;
@@ -101,7 +102,7 @@ public class PetController : MonoBehaviour
     public void EditorSetReturn() => CurrentState = VirtualPetState.Return;
 
     private Coroutine _candyInterestRoutine;
-    
+
     [ContextMenu("Start Candy Interest")]
     public void StartCandyInterest()
     {
@@ -137,9 +138,12 @@ public class PetController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("Fox got something in its face");
         if (!other.TryGetComponent(out ObjectReturn objectReturn)) 
             return;
         
+        print("it was food!");
+        munchAudio.Play();
         objectReturn.ReturnToStart();
         StopCandyInterest();
     }
