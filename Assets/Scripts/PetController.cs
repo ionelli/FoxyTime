@@ -19,13 +19,13 @@ public class PetController : MonoBehaviour
     private float _idleTimer;
     private PetEffects _effects;
     private PetArduinoHandler _arduino;
-    
+
     private VirtualPetState CurrentState
     {
         get => _virtualState;
         set
         {
-            if(_virtualState == value)
+            if (_virtualState == value)
                 return;
             _virtualState = value;
             _petStateChanged = true;
@@ -69,7 +69,7 @@ public class PetController : MonoBehaviour
         }
             
         
-        if(_agent.remainingDistance > destinationBuffer)
+        if(_agent.remainingDistance > _agent.radius)
             return;
         
         //temp
@@ -106,7 +106,7 @@ public class PetController : MonoBehaviour
             _petStateChanged = false;
         }
         
-        if(_agent.remainingDistance < destinationBuffer)
+        if(_agent.remainingDistance < _agent.radius)
         {
             _agent.SetDestination(wanderArea.GetRandomPosition());
         }
@@ -165,6 +165,7 @@ public class PetController : MonoBehaviour
 
 public enum VirtualPetState
 {
+    Invalid,
     Wander,
     Return,
     Idle
