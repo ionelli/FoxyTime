@@ -52144,7 +52144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4745038865672708791, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
       propertyPath: spoofData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5109265372379646188, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
       propertyPath: m_Layer
@@ -63593,8 +63593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stars: {fileID: 1987185522}
   smileys: {fileID: 719779367}
-  minSmileyEmission: 0.75
-  maxSmileyEmission: 3
+  minSmileyEmission: 1
+  maxSmileyEmission: 30
   hearts: {fileID: 414423737}
   minFlexAngle: 10
 --- !u!114 &1487347327 stripped
