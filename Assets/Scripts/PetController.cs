@@ -86,7 +86,7 @@ public class PetController : MonoBehaviour
             _petStateChanged = false;
         }
 
-        if (overrideBoredom)
+        if (_effects.AnyPlaying)
         {
             _idleTimer = 0;
         }
@@ -125,7 +125,6 @@ public class PetController : MonoBehaviour
     [ContextMenu("Start Candy Interest")]
     public void StartCandyInterest()
     {
-        overrideBoredom = true;
         if (CurrentState == VirtualPetState.Wander)
             CurrentState = VirtualPetState.Return;
 
@@ -138,7 +137,6 @@ public class PetController : MonoBehaviour
     [ContextMenu("Stop Candy Interest")]
     public void StopCandyInterest()
     {
-        overrideBoredom = false;
         _effects.StopSmileys();
         if(_candyInterestRoutine != null)
             StopCoroutine(C_CandyInterest());

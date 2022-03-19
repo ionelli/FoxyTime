@@ -13,6 +13,7 @@ public class PetEffects : MonoBehaviour
     [SerializeField] private float minFlexAngle = 10f;
 
     public bool StarsActive => stars.isPlaying;
+    public bool AnyPlaying => stars.isPlaying || hearts.isPlaying || smileys.isPlaying;
 
     private PhysicalPetState _physicalState;
     private PetArduinoHandler _arduino;
