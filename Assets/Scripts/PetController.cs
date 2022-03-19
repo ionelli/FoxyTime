@@ -113,10 +113,6 @@ public class PetController : MonoBehaviour
             StopCoroutine(_candyInterestRoutine);
         
         _candyInterestRoutine = StartCoroutine(C_CandyInterest());
-
-        //Show stars
-        //wait a moment
-        //Show smileys based on distance
     }
 
     [ContextMenu("Stop Candy Interest")]
