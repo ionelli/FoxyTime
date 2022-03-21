@@ -28,7 +28,7 @@ public class PetAnimator : MonoBehaviour
         agent.updatePosition = false;
     }
 
-    void LateUpdate()
+    void Update()
     {
         Vector3 worldDeltaPos = agent.nextPosition - transform.position;
         float dx = Vector3.Dot(transform.right, worldDeltaPos);
