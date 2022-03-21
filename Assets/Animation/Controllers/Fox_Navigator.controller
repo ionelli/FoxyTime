@@ -214,7 +214,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 93da703632b047d43b8f3a2b0f902424, type: 3}
     m_Threshold: 0.6666667
-    m_Position: {x: 0, y: 1.6}
+    m_Position: {x: 0, y: 1.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -230,7 +230,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: ba2500356de6e014d9477dc115771f94, type: 3}
     m_Threshold: 1.6666665
-    m_Position: {x: -1.6, y: 1.6}
+    m_Position: {x: -1.1, y: 1.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -246,7 +246,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 490c9560e31fae748af6de79fbaecb10, type: 3}
     m_Threshold: 2.6666663
-    m_Position: {x: 1.6, y: 1.6}
+    m_Position: {x: 1.1, y: 1.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -254,7 +254,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: f56a614af49e8f74fb38d336d6b77e35, type: 3}
     m_Threshold: 4.3333325
-    m_Position: {x: 0, y: 1.5}
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -270,7 +270,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: bc0cfd164a2579d41851505ba8332e40, type: 3}
     m_Threshold: 7.6666656
-    m_Position: {x: -1.5, y: 1.5}
+    m_Position: {x: -1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -278,7 +278,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: b2adcf57d666f76469d4ca24956e82b7, type: 3}
     m_Threshold: 9.333332
-    m_Position: {x: -0.1, y: 0}
+    m_Position: {x: -0.1, y: -0.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -286,7 +286,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: 8f0cf4218cd736142a75f73f2ce615ba, type: 3}
     m_Threshold: 10.999998
-    m_Position: {x: 1.5, y: 1.5}
+    m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx
@@ -294,7 +294,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 1827226128182048838, guid: bdbaf568193ceb44eb952bb2af5f3837, type: 3}
     m_Threshold: 12.666664
-    m_Position: {x: 0.1, y: 0}
+    m_Position: {x: 0.1, y: 0.1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: velx

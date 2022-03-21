@@ -37,9 +37,9 @@ public class PetAnimator : MonoBehaviour
         smoothDeltaPos = Vector2.Lerp(smoothDeltaPos, deltaPos, smooth);
 
         if (Time.deltaTime > 1e-5f)
-            velocity = smoothDeltaPos / Time.deltaTime;
+            velocity = deltaPos;// / Time.deltaTime;
 
-        bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
+        bool shouldMove = velocity.magnitude > .1f || agent.remainingDistance > agent.radius;
         
         animator.SetBool("move", shouldMove);
         animator.SetFloat("velx", velocity.x);
@@ -48,15 +48,15 @@ public class PetAnimator : MonoBehaviour
         // if (worldDeltaPos.magnitude > agent.radius)
         //     agent.nextPosition = transform.position + 0.9f * worldDeltaPos;
         
-        if (worldDeltaPos.magnitude > agent.radius)
+        if (worldDeltaPos.magnitude > float.Epsilon)
             transform.position = agent.nextPosition - 0.9f*worldDeltaPos;
     }
 
     private void OnAnimatorMove()
     {
         //transform.position = agent.nextPosition;
-        Vector3 position = animator.rootPosition;
-        position.y = agent.nextPosition.y;
-        transform.position = position;
+        // Vector3 position = animator.rootPosition;
+        // position.y = agent.nextPosition.y;
+        // transform.position = position;
     }
 }

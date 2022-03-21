@@ -69,7 +69,7 @@ public class PetController : MonoBehaviour
         }
             
         
-        if(_agent.remainingDistance > _agent.radius)
+        if(_agent.remainingDistance > _agent.radius || Vector3.Distance(transform.position, platformTransformTarget.position) > _agent.radius)
             return;
         
         //temp
