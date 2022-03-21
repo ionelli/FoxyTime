@@ -73,7 +73,6 @@ public class PetController : MonoBehaviour
             return;
         
         //temp
-        transform.SetPositionAndRotation(platformTransformTarget.position, platformTransformTarget.rotation);
         CurrentState = VirtualPetState.Idle;
     }
 
@@ -84,6 +83,8 @@ public class PetController : MonoBehaviour
             _idleTimer = 0;
             _petStateChanged = false;
         }
+
+        transform.SetPositionAndRotation(platformTransformTarget.position, platformTransformTarget.rotation);
 
         if (_effects.AnyPlaying)
         {

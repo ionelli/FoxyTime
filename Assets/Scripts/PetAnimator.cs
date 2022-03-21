@@ -13,7 +13,7 @@ public class PetAnimator : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     private Vector2 smoothDeltaPos;
-    private Vector2 velocity;
+    [SerializeField] private Vector2 velocity;
     private PetController controller;
     
     private void Awake()
@@ -51,9 +51,13 @@ public class PetAnimator : MonoBehaviour
         //     agent.nextPosition = transform.position + 0.9f * worldDeltaPos;
         
         if(controller.CurrentState == VirtualPetState.Idle)
+        {
+            velocity = Vector2.zero;
             return;
+        }
+            
         
-        if (worldDeltaPos.magnitude > float.Epsilon)
+        if (worldDeltaPos.magnitude > .1f)
             transform.position = agent.nextPosition - 0.9f*worldDeltaPos;
     }
 
