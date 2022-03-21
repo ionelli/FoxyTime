@@ -14,11 +14,13 @@ public class PetAnimator : MonoBehaviour
     private NavMeshAgent agent;
     private Vector2 smoothDeltaPos;
     private Vector2 velocity;
+    private PetController controller;
     
     private void Awake()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        controller = GetComponent<PetController>();
     }
 
     void Start()
@@ -26,7 +28,7 @@ public class PetAnimator : MonoBehaviour
         agent.updatePosition = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector3 worldDeltaPos = agent.nextPosition - transform.position;
         float dx = Vector3.Dot(transform.right, worldDeltaPos);
@@ -47,6 +49,9 @@ public class PetAnimator : MonoBehaviour
 
         // if (worldDeltaPos.magnitude > agent.radius)
         //     agent.nextPosition = transform.position + 0.9f * worldDeltaPos;
+        
+        if(controller.CurrentState == VirtualPetState.Idle)
+            return;
         
         if (worldDeltaPos.magnitude > float.Epsilon)
             transform.position = agent.nextPosition - 0.9f*worldDeltaPos;

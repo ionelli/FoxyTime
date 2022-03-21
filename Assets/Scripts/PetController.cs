@@ -20,7 +20,7 @@ public class PetController : MonoBehaviour
     private PetEffects _effects;
     private PetArduinoHandler _arduino;
 
-    private VirtualPetState CurrentState
+    public VirtualPetState CurrentState
     {
         get => _virtualState;
         set
@@ -77,7 +77,6 @@ public class PetController : MonoBehaviour
         CurrentState = VirtualPetState.Idle;
     }
 
-    private bool overrideBoredom;
     private void Idle()
     {
         if (_petStateChanged)
